@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+    <title>2. WEB - media Query </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+    <style> 
+
+     html, body {
+      color: #333;
+      font-family: sans-serif;
+      margin:0;
+      padding:0px;
+      }
+      a {
+          text-decoration: none;
+          color: #333;
+          font-family: sans-serif;
+      }
+
+      li {
+          list-style: square;
+      }
+
+      img{
+          width:400px;
+          height:300px;
+      }
+      /* */
+      header {
+          height: 90px;
+          border-bottom : 1px solid #333; 
+      }
+
+
+      #grid {
+          display: grid;
+          grid-template-columns: 250px 1fr;
+      }
+
+      #left {        
+          overflow : auto;  
+          vertical-align: top;
+          height: calc(100vh - 91px);
+      }
+
+      #right { 
+          overflow : auto; 
+          vertical-align: top;    
+          height: calc(100vh - 111px);
+          padding : 10px;
+          border-left: 1px solid #333;     
+      }
+
+
+      /* */
+      header  > h1{
+          text-align: center;
+          padding: 20px 0;
+          margin: 0;    
+      }
+
+      #left ul {
+          padding: -10px 30px;
+      }
+      #left li {
+          font-size: 0.85em;
+          line-height: 25px;;
+      }
+
+      #left li:hover{
+          background : #b4ddff31;
+      }
+
+      #right h4 { margin: 10px 0; }
+
+
+
+      /* media Query screen width > 800*/
+      @media( max-width : 800px ) {
+          #grid {
+              display: block;
+          }
+          header{ 
+              border-bottom: none;
+          }
+          #left{
+              height: 160px;
+          }
+          #right{
+              border-left: none;
+              height: 100%;
+          }
+      }
+
+    </style>
+</head>
+
+<body>    
+    <header>
+        <h1><a href="http://127.0.0.1:81/index.html">INDEX</a></h1>
+    </header>
+    
+    <div id="grid">
+        <div id="left">
+
+            <!-- Link-->
+            <ul>
+                <li><a href="1.html">1.html Angularjs</a></li>
+                <li><a href="2.html">2.html MediaQuery</a></li>
+                <li><a href="3.html">3.html</a></li>
+                <li><a href="https://www.techrepublic.com/blog/web-designer/how-to-create-media-queries-in-responsive-web-design/"> media queries in Responsive Web Design</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Media_queries">[wikipedia]Media_queries</a></li>
+            </ul>
+            <!-- //Link -->    
+        </div>
+
+        <div id ="right">       
+    
+            <h2>Media queries</h2>
+            Media queries go beyond the conventional media types that have been used since CSS 2.1, which allowed our websites to obtain some degree of media device responsiveness; for instance, see the sample external style sheet link elements using the media attribute with such references as media="screen" or media="print" below.
+            
+            The W3C answer to improving device-specific website response is the media queries specification. Media queries open up the spectrum of possibilities with the "media" attribute that controls how the styles get applied. Media queries takes the previous scheme to the next level by allowing us to target styles based on a number of device properties, including screen width, orientation, resolution, and others. Media queries allow us to target not only certain devices and classes of devices, but it allows us to actually inspect the physical characteristics of the device.
+            
+            For example, let's say we want to target iPhones, Android, and such devices which typically have a maximum screen resolution of 480px horizontal. We would establish the media query by applying two components, first setting the media type equals screen, and second, the actual query, which is enclosed in parentheses, that contains the media feature to inspect, and the target value.
+            
+            The query above will apply this style sheet only to a device that has a screen and only if the browser window on that device has a horizontal resolution no wider than 480 pixels, otherwise the link will be ignored. You can see from the file name mobile.css that this particular query is intended for mobile device styles.
+            
+            Taking this a step further, let's look at another example media query from The Goldilocks Approach to Responsive Web Design. It utilizes the following link in its example of what it calls "device independent" universal web design:
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
