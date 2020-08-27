@@ -3,6 +3,8 @@
 <head>    
     <title>index - WEB</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176443677-1"></script>
@@ -13,17 +15,33 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
         gtag('config', 'UA-176443677-1');
+
     </script>
     <!--// Analytics -->
 
+    <!-- Tawk.to-->       
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); 
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5f45f50f1e7ade5df44400f4/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })
+        ();
+    </script>
+    <!-- //Tawk.to -->
+
     <style>
         html, body {
-            color: #333;
-            font-family: sans-serif;
-            margin:0;
-            padding:0px;
+        color: #333;
+        font-family: sans-serif;
+        margin:0;
+        padding:0px;
         }
         a {
             text-decoration: none;
@@ -32,7 +50,7 @@
         }
 
         li {
-            list-style: outside;
+            list-style: square;
         }
 
         img{
@@ -45,24 +63,24 @@
             border-bottom : 1px solid #333; 
         }
 
-        #left {    
-            display: inline-block;    
+
+        #grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+        }
+
+        #left {        
             overflow : auto;  
-            width: 200px;
-            height: calc(100vh - 91px);
             vertical-align: top;
-            float: left;
+            height: calc(100vh - 91px);
         }
 
         #right { 
             overflow : auto; 
-            display: inline-block;
-            border-left: 1px solid #333;
-            width: calc(100vw - 240px);
+            vertical-align: top;    
             height: calc(100vh - 111px);
-            vertical-align: top;
-            float: left;
             padding : 10px;
+            border-left: 1px solid #333;     
         }
 
 
@@ -72,6 +90,54 @@
             padding: 20px 0;
             margin: 0;    
         }
+
+        #left ul {
+            padding: -10px 30px;
+        }
+        #left li {
+            font-size: 0.85em;
+            line-height: 25px;;
+        }
+
+        #left li:hover{
+            background : #b4ddff31;
+        }
+
+        #right h4 { margin: 10px 0; }
+
+
+
+        /* media Query screen width > 800*/
+        @media( max-width : 800px ) {
+            #grid {
+                display: block;
+            }
+            header{ 
+                border-bottom: none;
+            }
+            #left{
+                height: 160px;
+            }
+            #right{
+                border-left: none;
+                height: 100%;
+            }
+        }
+
+        .accordion {
+            color: #444;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            transition: 0.4s;
+            padding: 4px;
+        }
+        .panel {
+        display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -80,77 +146,92 @@
         <h1><a href="#">INDEX</a></h1>
     </header>
     
-    <div id="left">
+    <div id="grid">
+        <div id="left">
+            <button class="accordion" style="font-weight: bold;">nav</button>
+                <!-- Link-->
+                <ul class="panel">
+                    <li><a href="https://seulki0224.github.io/web1/index.html">git INDEX</a></li>
+                    <li><a href="#">Github</a></li>
+                    <li><a href="#">Comment - disqus</a></li>
+                    <li><a href="#">Talk - Tawk</a></li>
+                    <li><a href="https://www.w3schools.com/cssref/default.asp">W3S Css</a></li>
+                    <li><a href="https://caniuse.com/">Can i Use</a></li>
+                    <br>
 
-        <!-- Link-->
-        <ul>
-            <li><a href="https://seulki0224.github.io/web1/index.html">git INDEX</a></li>
-            <li><a href="#">Github</a></li>
-            <li><a href="#">Comment - disqus</a></li>
-            <li><a href="#">Talk - Tawk</a></li>
-            <li><a href="https://www.w3schools.com/cssref/default.asp">W3S Css</a></li>
+                    <li><a href="1.html">1.html Angularjs</a></li>
+                    <li><a href="2.html">2.html MediaQuery</a></li>
+                    <li><a href="3.html">3.html</a></li>
 
-            <br>
+                    <br>
+                    <li><a href="#">동영상 팝업 밖은 Disable</a></li>
+                    <li><a href="#">탭만들기 & 한번에 닫기 멜론</a></li>
+                    <li><a href="#">split</a></li>
+                    <li><a href="https://www.w3schools.com/howto/howto_js_tabs.asp">script</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <!-- //Link -->
+        </div>
 
-            <li><a href="1.html">1.html angularjs</a></li>
-            <li><a href="2.html">2.html</a></li>
-            <li><a href="3.html">3.html</a></li>
+        <div id ="right">       
 
-        </ul>
-        <!-- //Link -->    
+            <!-- #grid -->
+            <h4>grid</h4>
+            <div style="padding: 10px;  border: 1px solid #ddd; font-size: 0.75em; display:inline-block;">            
+                #grid { <br>
+                <span style="padding-left: 20px;">
+                    display: grid; <br>
+                </span>
+                <span style="padding-left: 20px; ">
+                grid-template-columns: 200px 1fr;<br>
+                </span>
+                }            
+            </div>
 
-        <!-- Tawk.to-->       
-        <script type="text/javascript">
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); 
-            (function () {
-                var s1 = document.createElement("script"),
-                    s0 = document.getElementsByTagName("script")[0];
-                s1.async = true;
-                s1.src = 'https://embed.tawk.to/5f45f50f1e7ade5df44400f4/default';
-                s1.charset = 'UTF-8';
-                s1.setAttribute('crossorigin', '*');
-                s0.parentNode.insertBefore(s1, s0);
-            })
-            ();
-        </script>
-        <!-- //Tawk.to -->
-
-
-    </div>
-
-    <div id ="right">       
-    
-        <!-- Img -->
-        <h4> Img </h4>
-        <img src="img/storyboard.PNG" alt="storyboard" title="storyboard">
-        <img src="https://t1.daumcdn.net/cfile/tistory/255E6D3C53E988CE06" alt="html5 기본구조"  title="html5 기본구조">
-        <!-- //Img-->
-
-        <!-- player-->
-        <h4> Player </h4>
-        <p>
-            <iframe width="300" height="150" src="https://www.youtube-nocookie.com/embed/TtqZBBxZzqQ?controls=0"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        </p>
-        <br class="padding: 20px 0">
-        <!-- //player -->
+            <!-- player-->
+            <h4> Player </h4>
+            <iframe width="300" height="150" src="https://www.youtube-nocookie.com/embed/TtqZBBxZzqQ?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
+            <!-- //player -->
 
 
-        <!-- Comment-->
-        <div id="disqus_thread"></div>
-        <script>
-            (function () {
-                var d = document,
-                    s = d.createElement('script');
-                s.src = 'https://web1-ubggvzmd8k.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <!-- //Comment-->
+            <!-- Comment-->
+            <div id="disqus_thread"></div>
+            <script>
+                (function () {
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://web1-ubggvzmd8k.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <!-- //Comment-->
+            
 
-    </div>
+        </div>
+
+    </div>    
+
+    <!-- Accordion -->
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+        }
+    </script>
+    <!-- //Accordion -->
+
+
 
 </body>
 </html>
