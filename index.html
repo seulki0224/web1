@@ -1,53 +1,156 @@
-html, body {
-    color: #333;
-    font-family: sans-serif;
-    margin:0;
-    padding:0px;
-}
-a {
-    text-decoration: none;
-    color: #333;
-    font-family: sans-serif;
-}
+<!doctype html>
+<html>
+<head>    
+    <title>index - WEB</title>
+    <meta charset="utf-8">
 
-li {
-    list-style: outside;
-}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176443677-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-img{
-    width:400px;
-    height:300px;
-}
-/* */
-header {
-    height: 90px;
-    border-bottom : 1px solid #333; 
-}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-#left {    
-    display: inline-block;    
-    overflow : auto;  
-    width: 200px;
-    height: calc(100vh - 91px);
-    vertical-align: top;
-    float: left;
-}
+        gtag('config', 'UA-176443677-1');
+    </script>
+    <!--// Analytics -->
 
-#right { 
-    overflow : auto; 
-    display: inline-block;
-    border-left: 1px solid #333;
-    width: calc(100vw - 240px);
-    height: calc(100vh - 111px);
-    vertical-align: top;
-    float: left;
-    padding : 10px;
-}
+    <style>
+        html, body {
+            color: #333;
+            font-family: sans-serif;
+            margin:0;
+            padding:0px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-family: sans-serif;
+        }
+
+        li {
+            list-style: outside;
+        }
+
+        img{
+            width:400px;
+            height:300px;
+        }
+        /* */
+        header {
+            height: 90px;
+            border-bottom : 1px solid #333; 
+        }
+
+        #left {    
+            display: inline-block;    
+            overflow : auto;  
+            width: 200px;
+            height: calc(100vh - 91px);
+            vertical-align: top;
+            float: left;
+        }
+
+        #right { 
+            overflow : auto; 
+            display: inline-block;
+            border-left: 1px solid #333;
+            width: calc(100vw - 240px);
+            height: calc(100vh - 111px);
+            vertical-align: top;
+            float: left;
+            padding : 10px;
+        }
 
 
-/* */
-header  > h1{
-    text-align: center;
-    padding: 20px 0;
-    margin: 0;    
-}
+        /* */
+        header  > h1{
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;    
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><a href="#">INDEX</a></h1>
+    </header>
+    
+    <div id="left">
+
+        <!-- Link-->
+        <ul>
+            <li><a href="https://seulki0224.github.io/web1/index.html">git INDEX</a></li>
+            <li><a href="#">Github</a></li>
+            <li><a href="#">Comment - disqus</a></li>
+            <li><a href="#">Talk - Tawk</a></li>
+            <li><a href="https://www.w3schools.com/cssref/default.asp">W3S Css</a></li>
+
+            <br>
+
+            <li><a href="1.html">1.html angularjs</a></li>
+            <li><a href="2.html">2.html</a></li>
+            <li><a href="3.html">3.html</a></li>
+
+        </ul>
+        <!-- //Link -->    
+
+        <!-- Tawk.to-->       
+        <script type="text/javascript">
+            // var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); 
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5f45f50f1e7ade5df44400f4/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })
+            ();
+        </script>
+        <!-- //Tawk.to -->
+
+
+    </div>
+
+    <div id ="right">       
+    
+        <!-- Img -->
+        <h4> Img </h4>
+        <img src="img/storyboard.PNG" alt="storyboard" title="storyboard">
+        <img src="https://t1.daumcdn.net/cfile/tistory/255E6D3C53E988CE06" alt="html5 기본구조"  title="html5 기본구조">
+        <!-- //Img-->
+
+        <!-- player-->
+        <h4> Player </h4>
+        <p>
+            <iframe width="300" height="150" src="https://www.youtube-nocookie.com/embed/TtqZBBxZzqQ?controls=0"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </p>
+        <br class="padding: 20px 0">
+        <!-- //player -->
+
+
+        <!-- Comment-->
+        <div id="disqus_thread"></div>
+        <script>
+            (function () {
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://web1-ubggvzmd8k.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <!-- //Comment-->
+
+    </div>
+
+</body>
+</html>
