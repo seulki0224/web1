@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <title>4. WEB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+    <style> 
+        html, body {
+            background : #0136de;
+            color: #fff;
+            font-family: sans-serif;
+            margin:0;
+            padding:0px;
+        }        
+        header, footer{
+            height: 200px;
+            position: relative;
+        }
+
+
+        header{
+            display: grid;
+            grid-template-columns: 361px 1fr 361px;
+            grid-gap: 30px;
+        } 
+        section{
+            height: calc(100vh - 400px);
+            display: grid;
+            grid-template-columns: 361px 1fr 361px;
+            grid-gap: 30px;
+        }
+        footer{
+            display: grid;
+            grid-template-columns: 361px 1fr 361px;
+            grid-gap: 30px;
+        }
+
+
+        header h2 {            
+            position: absolute;
+            bottom: 0px;   
+        }
+        header span {       
+            position: relative;
+            top: 130px;           
+        }
+
+        section #section_center {
+            background: #fff;
+            color:#000;
+            box-shadow: 0px 20px 50px #000b6b;
+        }
+        section .side{
+            background: #fff;
+            opacity: 0.4;
+        }      
+
+        footer h3, footer span{
+            display: inline;
+            top: 0;    
+        }
+        footer h3 {
+            position: absolute;
+        }
+        footer span {
+            top: 60px;
+            font-size: 0.85em;
+            position: relative;
+        }
+
+
+
+        /* Image Overlay Slide  */
+        .container {
+            position: relative;
+            width: 100%;
+        }        
+        .image {
+            display: block;
+            width: 1198px;
+            height: 609px;
+        }        
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            overflow: hidden;
+            width: 0;
+            height: 100%;
+            transition: .5s ease;
+            opacity: 0.5;
+        }        
+        .container:hover .overlay {
+            width: 100%;
+        }
+        /* //Image Overlay Slide */
+        
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="side left"></div>
+        <div id="header_center">
+            <span>Pricing</span>
+            <h2>Last workshio stuff</h2>
+        </div>
+        <div class="side right"></div>
+    </header>
+
+    <section>
+        <div class="side left"></div>
+        <div id="section_center">
+
+            <!-- Image Overlay Slide -->
+            <div class="container">
+                <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FRr8dO%2FbtqAs3IsgTp%2FGoCvTauKccDMMXxDJB0gwk%2Fimg.png" alt="Avatar" class="image">
+                <div class="overlay"></div>
+            </div>
+            <!--//Image Overlay Slide -->
+
+
+
+        </div>
+        <div class="side right"></div>
+    </section>
+
+    <footer>
+        <div class="side left"></div>
+        <div id="footer_center">
+            <h3>The navigation design</h3> 
+            <span>
+                A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, 
+                or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. 
+                In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design)
+            </span>            
+        </div>
+        <div class="side right"></div>
+    </footer>
+
+</body>
+</html>

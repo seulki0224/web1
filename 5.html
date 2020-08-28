@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <title>4. WEB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+    <style> 
+        html, body {
+            background : #fff;
+            color: #333;
+            font-family: sans-serif;
+            margin:0;
+            padding:0px;
+        }        
+        header, footer{
+            height: 200px;
+            position: relative;
+        }
+
+
+        header, section, footer{
+            display: grid;
+            grid-template-columns: 423px 1fr 423px;
+            grid-gap: 30px;
+        }
+        section{
+            height: calc(100vh - 400px);
+        }
+
+        header h2 {            
+            position: absolute;
+            bottom: 0px;   
+        }
+        header span {       
+            position: relative;
+            top: 130px;           
+        }
+
+        section #section_center {
+            background: #fff;
+            color:#000;
+            box-shadow: 0px 20px 50px #5f5a5a;
+        }
+        section .side{
+            background: #333;
+            opacity: 0.4;
+        }      
+
+        footer h3, footer span{
+            display: inline;
+            top: 0;    
+        }
+        footer h3 {
+            position: absolute;
+        }
+        footer span {
+            top: 60px;
+            font-size: 0.85em;
+            position: relative;
+        }
+
+        .content {
+            position: relative;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            margin-top: -35px;
+        }
+
+        #myBtn {
+            width: 100px;
+            font-size: 0.7em;
+            height: 25px;
+            line-height: 25px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            margin-top: 7px;
+            margin-left: 7px;
+        }        
+        #myBtn:hover {
+            background: #ddd;
+            color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="side left"></div>
+        <div id="header_center">
+            <span>Pricing</span>
+            <h2>Last workshio stuff</h2>
+        </div>
+        <div class="side right"></div>
+    </header>
+
+    <section>
+        <div class="side left"></div>
+        <div id="section_center">
+
+
+            <video autoplay muted loop id="myVideo" width="100%"  controls>
+            <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+            </video>
+
+
+            <div class="content">
+                <button id="myBtn" onclick="myFunction()">Pause</button>
+            </div>
+
+            <script>
+                var video = document.getElementById("myVideo");
+                var btn   = document.getElementById("myBtn");
+                
+                function myFunction() {
+                    if (video.paused) {
+                        video.play();
+                        btn.innerHTML = "Pause";
+                    } else {
+                        video.pause();
+                        btn.innerHTML = "Play";
+                    }
+                }
+            </script>
+            
+
+        </div>
+        <div class="side right"></div>
+    </section>
+
+    <footer>
+        <div class="side left"></div>
+        <div id="footer_center">
+            <h3>The navigation design</h3> 
+            <span>
+                A design is a plan or specification for the construction of an object or system or for the implementation of an activity or process, 
+                or the result of that plan or specification in the form of a prototype, product or process. The verb to design expresses the process of developing a design. 
+                In some cases, the direct construction of an object without an explicit prior plan (such as in craftwork, some engineering, coding, and graphic design)
+            </span>            
+        </div>
+        <div class="side right"></div>
+    </footer>
+
+</body>
+</html>
