@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    
+<head>    
+    <title></title>
+    <meta charset="utf-8">
+    
+</head>
+
+<body>
+
+    <script>
+        var cid_list = new Array ('000001113393111','000002650008');
+        var i = 0;
+        var br = '<br/>';
+        
+        while( i < cid_list[i]){
+            
+            if ( 12 == cid_list[i].length ){
+                document.write(cid_list[i]  + ' ' + cid_list[i].length + '자 ' + br);
+            }
+            else {
+                document.write(cid_list[i] +  ' ' + '12글자 넘음' + cid_list[i].length + '자 '  + br);
+            }
+            i = i + 1;
+        };
+    
+    </script>
+    
+    </body>
+    </html>
