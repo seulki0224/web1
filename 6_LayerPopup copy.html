@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>    
+    </script>
+
+    <style>
+        body{
+            background: black;
+        }
+
+        #cover-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .video-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        #video-studiomeal{
+            transform : scale(1);
+        }
+
+        .background {position: relative; width: 648px;}
+        .menu { position: absolute; background-color: hsla(0, 0%, 100%, 0.123); display: inline-block; top: 0; width: 648px;}
+        
+        ul { height: 30px; line-height: 30px; width: 648px; }
+        li { float: left; list-style: none;   }
+        a {  color: white; text-decoration: none; padding: 0 30px;  }
+        a:hover{background-color: hsla(298, 68%, 91%, 0.212); }
+
+        .content { position: absolute; font-size: 5em; color: white;}
+    </style>
+</head>
+
+<body>
+    <div class="video-wrapper">
+        <div class="background">
+            <video muted="" playsinline="" autoplay="" loop="" id="video-studiomeal" src="https://images.apple.com/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/overview/primary/hero/large_2x.mp4"></video>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">web</a></li>
+                <li><a href="#">site</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">guest</a></li>
+                <li><a href="#">photo</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            보.아.라.배.수.민
+        </div>
+    </div>
+    <canvas id="covert-canvas"></canvas>
+</body>
+
+</html>
