@@ -5,36 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layer Popup</title>
     <style>
-        body{ 
-            background: black;
-            margin: 0;
-        }
         .wrap {
-            width: 800px;
-            height: 800px;
+            width: 400px;
+            height: 600px;
             overflow: hidden;
         }
         .img {
             overflow: hidden;
             background-image: url(http://www.pngpix.com/wp-content/uploads/2016/04/Hand-Holding-Smartphone-PNG-Image2-1-500x585.png);
-            width: 719px;
-            height: 78%;
+            width: 526px;
+            height: 66%;
             background-repeat: no-repeat;
             background-size: cover;
             z-index: 3;
             position: absolute;
-            left: -136px;
-            bottom: 205px;
+            left: -102px;
+            top: 38px;
             -ms-transform: rotate(-21deg);
             transform: rotate(-20deg);
         }
-
-
-
         /* popup Layer */
         .btn { 
             display: block;
-            width: 200px;
+            width: 150px;
             height: 50px;
             background: #ffffff;
             text-decoration: none;
@@ -42,12 +35,13 @@
             line-height: 50px;
             color: black;
             font-weight: bold;
-            top: 200px;
-            left: 205px;
+            top: 254px;
+            left: 141px;
             position: absolute;
             border-radius: 50px;
             z-index: 50;
         }
+        
         .popup { 
             position: absolute;
             left: 50%;
@@ -91,6 +85,15 @@
         }
         /* //popup Layer */
 
+
+        .video {
+            width: 215px;
+            height: 450px;
+            left: 106px;
+            top: 109px;
+            overflow: hidden;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
@@ -103,10 +106,7 @@
 
             <div class="popup" id="pop1">
                 <a href="#a">닫기</a>
-
-                <video muted="" width="100%"  playsinline="" autoplay="" loop="" id="video-studiomeal" src="https://www.w3schools.com/howto/rain.mp4"></video>
-
-
+                <video muted="" width="100%"  playsinline="" autoplay="" loop="" id="video-studiomeal2" src="https://www.w3schools.com/howto/rain.mp4"></video>
 
             </div>
             <div class="dim">
@@ -114,7 +114,7 @@
         </div>
 
         <div class="video-wrapper">
-            <video muted="" playsinline="" autoplay="" loop="" id="video-studiomeal" src="https://images.apple.com/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/overview/primary/hero/large_2x.mp4"></video>
+            <video muted="" playsinline="" autoplay="" loop="" id="video-studiomeal" class="video" src="https://images.apple.com/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/overview/primary/hero/large_2x.mp4"></video>
         </div>
 
       
