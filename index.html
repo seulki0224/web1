@@ -1,341 +1,135 @@
-<!doctype html>
-<html>
-<head>    
-    <title>index - WEB</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176443677-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-176443677-1');
-
-    </script>
-    <!--// Analytics -->
-
-    <!-- Tawk.to-->       
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date(); 
-        (function () {
-            var s1 = document.createElement("script"),
-                s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/5f45f50f1e7ade5df44400f4/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })
-        ();
-    </script>
-    <!-- //Tawk.to -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layer Popup</title>
     <style>
-        html, body {
-        color: #333;
-        font-family: sans-serif;
-        margin:0;
-        padding:0px;
+        body{ 
+            background: black;
+            margin: 0;
         }
-        a {
-            text-decoration: none;
-            color: #333;
-            font-family: sans-serif;
-        }
-
-        li {
-            list-style: square;
-        }
-
-        img{
-            width:400px;
-            height:300px;
-        }
-        /* */
-        header {
-            height: 90px;
-            border-bottom : 1px solid #333; 
-        }
-
-
-        #grid {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-        }
-
-        #left {        
-            overflow : auto;  
-            vertical-align: top;
-            height: calc(100vh - 91px);
-        }
-
-        #right { 
-            overflow : auto; 
-            vertical-align: top;    
-            height: calc(100vh - 111px);
-            padding : 10px;
-            border-left: 1px solid #333;     
-        }
-
-        /* player */
-
-
-        #cover-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .wrap {
+            width: 800px;
+            height: 800px;
+            overflow: hidden;
         }
         .video-wrapper{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
         }
         #video-studiomeal{
-            transform : scale(1);
+        }
+        .img {
+            overflow: hidden;
+            background-image: url(http://www.pngpix.com/wp-content/uploads/2016/04/Hand-Holding-Smartphone-PNG-Image2-1-500x585.png);
+            width: 719px;
+            height: 78%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 3;
+            position: absolute;
+            left: -136px;
+            bottom: 205px;
+            -ms-transform: rotate(-21deg);
+            transform: rotate(-20deg);
         }
 
-        .background {position: relative; width: 648px;}
-        .menu { position: absolute; background-color: hsla(0, 0%, 100%, 0.123); display: inline-block; top: 0; width: 648px;}
-        
-        ul { height: 30px; line-height: 30px; width: 648px; }
-        li { float: left; list-style: none;   }
-        a {  color: white; text-decoration: none; padding: 0 30px;  }
-        a:hover{background-color: hsla(298, 68%, 91%, 0.212); }
-
-        .content { position: absolute; font-size: 5em; color: white;}
 
 
-        /* //player */
-
-        /* */
-        header  > h1{
+        /* popup Layer */
+        .btn { 
+            display: block;
+            width: 200px;
+            height: 50px;
+            background: #4ac4f3;
+            text-decoration: none;
             text-align: center;
-            padding: 20px 0;
-            margin: 0;    
+            line-height: 50px;
+            color: #fff;
+            top: 200px;
+            left: 205px;
+            position: absolute;
+            border-radius: 50px;
+            z-index: 50;
         }
-
-        #left ul {
-            padding: -10px 30px;
+        .popup { 
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 5;
+            transform: translate(-50%, -50%);
+            width: 465px;
+            height: 300px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+            background: rgba(255, 255, 255, 0.8);
+            text-align: right;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: all 0.5s;
+            position: fixed;    
+            
         }
-        #left li {
-            font-size: 0.85em;
-            line-height: 25px;;
+        .popup a {
+            color: black;
+            text-decoration: none;
         }
-
-        #left li:hover{
-            background : #b4ddff31;
+        .popup:target {
+            opacity: 1;
         }
-
-        #right h4 { margin: 10px 0; }
-
-
-
-        /* media Query screen width > 800*/
-        @media( max-width : 800px ) {
-            #grid {
-                display: block;
-            }
-            header{ 
-                border-bottom: none;
-            }
-            #left{
-                height: 160px;
-            }
-            #right{
-                border-left: none;
-                height: 100%;
-            }
+        .popup:target + .dim{
+            opacity: 1;
+            z-index: 2;
         }
-
-        .accordion {
-            color: #444;
-            cursor: pointer;
+        .dim { 
+            position: absolute;
+            left:0; 
+            top:0;
+            z-index: -1;
             width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            transition: 0.4s;
-            padding: 4px;
+            height: 100%;
+            background:rgba(0,0,0,0.6);
+            opacity: 0;  
+            transition: all 0.5s;
+            position: fixed;      
         }
-        .panel {
-        display: none;
-        }
+        /* //popup Layer */
 
     </style>
 </head>
 <body>
 
-    <header>
-        <h1><a href="#">INDEX</a></h1>
-    </header>
-    
-    <div id="grid">
-        <div id="left">
-            <button class="accordion" style="font-weight: bold;">nav</button>
-                <!-- Link-->
-                <ul class="panel">
-                    <li><a href="https://seulki0224.github.io/web1/index.html">git INDEX</a></li>
-                    <li><a href="#">Github</a></li>
-                    <li><a href="#">Comment - disqus</a></li>
-                    <li><a href="#">Talk - Tawk</a></li>
-                    <li><a href="https://www.w3schools.com/cssref/default.asp">W3S Css</a></li>
-                    <li><a href="https://caniuse.com/">Can i Use</a></li>
-                    <br>
+    <div class="wrap">
 
-                    <li><a href="1.html">1.html Angularjs</a></li>
-                    <li><a href="2.html">2.html MediaQuery</a></li>
-                    <li><a href="3.html">3.html</a></li>
-                    <li><a href="4.html">4.html</a></li>
-                    <li><a href="5.html">5.html</a></li>
 
-                    <br>
-                    <li><a href="#">동영상 팝업 밖은 Disable</a></li>
-                    <li><a href="#">탭만들기 & 한번에 닫기 멜론</a></li>
-                    <li><a href="#">split</a></li>
-                    <li><a href="https://www.w3schools.com/howto/howto_js_tabs.asp">script</a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-                <!-- //Link -->
+        <div>
+            <a href="#pop1" class="btn">팝업열기</a>
+
+            <div class="popup" id="pop1">
+                <a href="#a">닫기</a>
+
+                <video muted="" width="100%"  playsinline="" autoplay="" loop="" id="video-studiomeal" src="https://www.w3schools.com/howto/rain.mp4"></video>
+
+
+
+            </div>
+            <div class="dim">
+            </div>
         </div>
 
-        <div id ="right">       
-
-            <!-- #grid -->
-            <h4>grid</h4>
-            <div style="padding: 10px;  border: 1px solid #ddd; font-size: 0.75em; display:inline-block;">            
-                #grid { <br>
-                <span style="padding-left: 20px;">
-                    display: grid; <br>
-                </span>
-                <span style="padding-left: 20px; ">
-                grid-template-columns: 200px 1fr;<br>
-                </span>
-                }            
-            </div>
-
-            <!-- Button -->
-            <script>
-                var Links = {
-                    setColor:function (color){
-                        var alist = document.querySelectorAll('a');
-                        var i = 0;
-                        while(i < alist.length){
-                            alist[i].style.color = color;
-                            i = i + 1;
-                        }
-                    }
-                };
-                
-                var Body = {
-                    setColor:function (color) {
-                        document.querySelector('body').style.color = color;
-                    },
-                    setBackgroundColor:function (color){
-                        document.querySelector('body').style.backgroundColor = color;
-                    }
-                }        
-        
-                //self this
-                function nightDayHandler(self){
-                    var target = document.querySelector('body');
-                    if(self.value === 'night'){
-                        Body.setBackgroundColor('black');
-                        Body.setColor('white');
-                        self.value = 'day';
-        
-                        Links.setColor('powderblue');
-                    } else {
-                        Body.setBackgroundColor('white');
-                        Body.setColor('black');
-                        self.value = 'night';
-        
-                        Links.setColor('blue');
-                    }
-                }
-            </script> 
-                    
-            <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);">
-            <!-- //Button -->
-
-            <!-- player-->
-            <div class="video-wrapper">
-                <div class="background">
-                    <video muted="" playsinline="" autoplay="" loop="" id="video-studiomeal" src="https://images.apple.com/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/overview/primary/hero/large_2x.mp4"></video>
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">web</a></li>
-                        <li><a href="#">site</a></li>
-                        <li><a href="#">blog</a></li>
-                        <li><a href="#">guest</a></li>
-                        <li><a href="#">photo</a></li>
-                    </ul>
-                </div>
-        
-                <div class="content">
-                    보.아.라.배.수.민
-                </div>
-            </div>
-            <canvas id="covert-canvas"></canvas>
-            <!-- //player-->
-
-
-            <!-- player-->
-            <h4> Player </h4>
-            <iframe width="300" height="150" src="https://www.youtube-nocookie.com/embed/TtqZBBxZzqQ?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
-            <!-- //player -->
-
-            <!-- Comment-->
-            <div id="disqus_thread"></div>
-            <script>
-                (function () {
-                    var d = document,
-                        s = d.createElement('script');
-                    s.src = 'https://web1-ubggvzmd8k.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <!-- //Comment-->
-            
-
+        <div class="video-wrapper">
+            <video muted="" playsinline="" autoplay="" loop="" id="video-studiomeal" src="https://images.apple.com/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/overview/primary/hero/large_2x.mp4"></video>
         </div>
 
-    </div>    
+      
 
-    <!-- Accordion -->
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+
+        <div class="img"></div>  
         
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-        }
-    </script>
-    <!-- //Accordion -->
 
 
+
+        
+    </div>
 
 </body>
 </html>
