@@ -244,7 +244,7 @@
                         var alist = document.querySelectorAll('a');
                         var i = 0;
                         while(i < alist.length){
-                            alist[i].style.color = color;
+                            alist[i].style.color = color;                            
                             i = i + 1;
                         }
                     }
@@ -278,7 +278,8 @@
                 }
             </script> 
                     
-            <input id="night_day" class="btn" style="margin-left: 35px; "type="button" value="night" onclick="nightDayHandler(this);">
+            <!-- <input id="night_day" class="btn" style="margin-left: 35px;"type="button" value="night" onclick="nightDayHandler(this);"> -->
+            <a id="night_day" class="btn" style="margin-left: 35px;" type="button" value="night" onclick="nightDayHandler(this);">night</a>
             <!-- //Button -->
 
             <!-- Layer Popup-->
