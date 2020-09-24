@@ -8,20 +8,23 @@
 
     <style>
         html, body {
-        color: #333;
+        color:#333;
         font-family: sans-serif;
         margin:0;
         padding:0px;
+        background: white;
         }
 
         a {
             text-decoration: none;
-            color: #333;
+            color:#333;
             font-family: sans-serif;
+            display: inline-block;
         }
-
+    
         li {
             list-style: square;
+            color:#333;
         }
 
         img{
@@ -33,7 +36,6 @@
             height: 90px;
             border-bottom : 1px solid #333; 
         }
-
 
         #grid {
             display: grid;
@@ -50,12 +52,11 @@
             overflow : auto; 
             vertical-align: top;    
             height: calc(100vh - 111px);
-            padding : 10px;
-            border-left: 1px solid #333;     
+            border-left: 1px solid #333;
         }
 
         /* */
-        header  > h1{
+        header > h1{
             text-align: center;
             padding: 20px 0;
             margin: 0;    
@@ -73,23 +74,22 @@
             background : #b4ddff31;
         }
 
-        #right h4 { margin: 10px 0; }
+        #right h4 { padding:  0 10px; background: #333; color: #efe8d8; font-size: 12px; height: 23px; line-height: 23px; box-sizing: border-box;}
 
 
         /* popup Layer */
         .btn { 
-            display: block;
+            display: inline-block;
             width: 130px;
-            height: 30px;
-            line-height: 30px;
-            background: rgba(0,0,0,0.5);
+            height: 23px;
+            line-height: 23px;
+            background:#333;
+            color: #fff;
             text-decoration: none;
             text-align: center;
-            color: black;
-            font-weight: bold;
-            border-radius: 20px;
+            font-weight: bold;            
             z-index: 50;
-            font-size: 15px;
+            font-size: 12px;
             border: none;
             margin: 5px;
         }
@@ -101,11 +101,10 @@
             z-index: 5;
             transform: translate(-50%, -50%);
             width: 200px;
-            height: 150px;
+            height: 134px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.5);
             text-align: right;
-            padding: 20px;
             box-sizing: border-box;
             opacity: 0;
             transition: all 0.5s;
@@ -155,7 +154,8 @@
         }
 
         .accordion {
-            color: #444;
+            color: #efe8d8;
+            background: #333;
             cursor: pointer;
             width: 100%;
             border: none;
@@ -236,20 +236,7 @@
         </div>
 
         <div id ="right">       
-
-            <!-- #grid -->
-            <h4>grid</h4>
-            <div style="padding: 10px;  border: 1px solid #ddd; font-size: 0.75em; display:inline-block;">            
-                #grid { <br>
-                <span style="padding-left: 20px;">
-                    display: grid; <br>
-                </span>
-                <span style="padding-left: 20px; ">
-                grid-template-columns: 200px 1fr;<br>
-                </span>
-                }            
-            </div>
-
+    
             <!-- Button -->
             <script>
                 var Links = {
@@ -269,6 +256,9 @@
                     },
                     setBackgroundColor:function (color){
                         document.querySelector('body').style.backgroundColor = color;
+                    },
+                    seth4color:function (color){
+                        document.querySelector('h4').style.backgroundColor = color;
                     }
                 }        
         
@@ -276,35 +266,49 @@
                 function nightDayHandler(self){
                     var target = document.querySelector('body');
                     if(self.value === 'night'){
-                        Body.setBackgroundColor('rgba(0,0,0,0.5)');
-                        Body.setColor('red');
-                        self.value = 'day';        
-                        Links.setColor('green');
+                        Body.setBackgroundColor('#333');
+                        Body.setColor('white');
+                        self.value = 'day';    
+
+                        Links.setColor('white');
                     } else {
                         Body.setBackgroundColor('white');
                         Body.setColor('#333');
                         self.value = 'night';
         
-                        Links.setColor('blue');
+                        Links.setColor('#333');
                     }
                 }
             </script> 
                     
-            <input id="night_day" class="btn" type="button" value="night" onclick="nightDayHandler(this);">
+            <input id="night_day" class="btn" style="margin-left: 35px; "type="button" value="night" onclick="nightDayHandler(this);">
             <!-- //Button -->
 
             <!-- Layer Popup-->
-            <div>
+            <div style="display:inline-block; ">
                 <a href="#pop1" class="btn">Layer Popup</a>
     
                 <div class="popup" id="pop1">
-                    <a href="#a">닫기</a>
+                    <a href="#a">close</a>
                     <video muted="" width="100%"  playsinline="" autoplay="" loop="" id="video-studiomeal2" src="https://www.w3schools.com/howto/rain.mp4"></video>
                 </div>
                 <div class="dim">
                 </div>
             </div>
             <!-- // Layer Popup-->
+
+            <!-- #grid -->
+            <h4> grid </h4>
+            <div style="padding: 10px;  border: 1px solid #ddd; font-size: 0.75em; display:inline-block;">            
+                #grid { <br>
+                <span style="padding-left: 20px;">
+                    display: grid; <br>
+                </span>
+                <span style="padding-left: 20px; ">
+                grid-template-columns: 200px 1fr;<br>
+                </span>
+                }            
+            </div>
             
             <!-- player-->
             <h4> Player </h4>
@@ -323,8 +327,6 @@
                 })();
             </script>
             <!-- //Comment-->
-            
-
         </div>
 
     </div>    
